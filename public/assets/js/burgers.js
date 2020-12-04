@@ -64,28 +64,23 @@ $(function () {
     });
   });
 
-  $(".create-form").on("#submit", function (event) {
+  $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    let newburger = {
-      burger_name: $(".burgerData")
-        .val()
-        .trim()
-      // devoured: $("[name=button]:click")
-      //   .val()
-      //   .trim()
+    let newBurger = {
+      burger_name: $("#burgerData").val().trim()
     };
 
     // Send the POST request.
     //CREATE
     $.ajax("/burgers", {
       type: "POST",
-      data: JSON.stringify(newburger),
+      data: JSON.stringify(newBurger),
       dataType: 'json',
       contentType: 'application/json'
     }).then(function () {
-      console.log("Created new burger!");
+      console.log("Created new burger! " + newBurger);
       // Reload the page to get the updated list
       location.reload();
     });
