@@ -58,7 +58,7 @@ $(function () {
       dataType: 'json',
       contentType: 'application/json'
     }).then(function () {
-      console.log("Changed devour to", newdevour);
+      console.log("Changed devour to " + newdevour);
       // Reload the page to get the updated list
       location.reload();
     });

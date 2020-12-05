@@ -1,4 +1,6 @@
 // Import MySQL connection.
+
+//mapping the database to the model 
 var connection = require("./connection.js");
 
 // ["?", "?", "?"].toString() => "?,?,?";
@@ -66,7 +68,7 @@ let orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  // An example of objColVals would be {obj_name: impossible burger, devoured: true}
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
